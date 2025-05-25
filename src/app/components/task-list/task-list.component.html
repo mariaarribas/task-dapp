@@ -1,0 +1,30 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <h1>Seguimiento de Tareas</h1>
+    <p class="description">
+      Añade tus tareas pendientes y controla su estado.
+    </p>
+
+    <div class="input-group">
+      <input
+        type="text"
+        [(ngModel)]="newTask"
+        placeholder="Escribe una nueva tarea..."
+        (keyup.enter)="createTask()"
+      />
+      <button (click)="createTask()" [disabled]="!newTask.trim()">Añadir</button>
+    </div>
+
+    <div class="task-list-container">
+      <ul class="task-list">
+        <li *ngFor="let task of tasks" [class.completed]="task.completed">
+          <span (click)="toggleTask(task.id)" class="task-desc">
+            {{ task.description }}
+          </span>
+          <button class="btn-delete" (click)="deleteTask(task.id)">Eliminar</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

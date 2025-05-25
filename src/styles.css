@@ -1,0 +1,185 @@
+/* Fondo con imagen y difuminado */
+body {
+  background: 
+    linear-gradient(rgba(30, 39, 50, 0.7), rgba(30, 39, 50, 0.7)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #ecf0f1;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 500px;
+  width: 90%;
+  padding: 30px 40px;
+  background: rgba(44, 62, 80, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+}
+
+/* Título */
+h1 {
+  font-size: 3rem;
+  color: #f39c12;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  font-weight: 900;
+}
+
+/* Descripción */
+.description {
+  font-size: 1.25rem;
+  color: #dcdde1;
+  font-style: italic;
+  margin-bottom: 25px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Grupo input y botón */
+.input-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 14px 20px;
+  font-size: 1.25rem;
+  border: 2px solid #f39c12;
+  border-radius: 10px;
+  outline: none;
+  background: #2c3e50;
+  color: #ecf0f1;
+  transition: border-color 0.3s, background-color 0.3s;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"]::placeholder {
+  color: #bdc3c7;
+  font-style: italic;
+}
+
+input[type="text"]:focus {
+  border-color: #e67e22;
+  background: #34495e;
+}
+
+/* Botón */
+button {
+  padding: 14px 22px;
+  background-color: #f39c12;
+  border: none;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.6);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:disabled {
+  background-color: #718093;
+  color: #dcdde1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:hover:not(:disabled) {
+  background-color: #e67e22;
+  box-shadow: 0 7px 20px rgba(230, 126, 34, 0.8);
+}
+
+/* Lista de tareas */
+.task-list {
+  list-style: none;
+  padding-left: 0;
+  max-height: 350px;
+  overflow-y: auto;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar personalizado para webkit */
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #f39c12;
+  border-radius: 8px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Cada tarea */
+.task-list li {
+  background: #34495e;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ecf0f1;
+  transition: background-color 0.3s, transform 0.15s;
+}
+
+.task-list li:hover {
+  background-color: #f39c12;
+  color: #2c3e50;
+  transform: scale(1.03);
+}
+
+/* Descripción de la tarea */
+.task-desc {
+  flex-grow: 1;
+  text-align: left;
+  padding-right: 15px;
+}
+
+/* Tarea completada */
+.completed .task-desc {
+  text-decoration: line-through;
+  color: #bdc3c7;
+  opacity: 0.7;
+}
+
+/* Botón eliminar */
+.btn-delete {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.7);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+
